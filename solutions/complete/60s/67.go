@@ -12,8 +12,8 @@
 // file containing a triangle with one-hundred rows.
 // - Starting from the bottom row n, for each pair of nums in row n below a num in row n-1, take the max and add that
 // to the num in row n-1
-// - Then repeat, until you ge to the top
-// - The remaining number is the max
+// - Then repeat, until you get to the top
+// - The remaining number is the max sum
 
 package main
 
@@ -69,7 +69,7 @@ func main() {
 	numberOfRows := len(triangleRows)
 	maxSumRow := triangleRows[numberOfRows - 1]
 
-	for i := len(triangleRows)-1; i >= 1; i-- {
+	for i := numberOfRows-1; i >= 1; i-- {
 		maxSumRow = mergeConsecutiveRows(triangleRows[i-1], maxSumRow)
 	}
 	fmt.Println(maxSumRow)
